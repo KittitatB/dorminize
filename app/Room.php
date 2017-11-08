@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Room extends Model
 {
+    protected $fillable = ['number','status','checkin_date'];
+
     public function pay()
     {
         return $this->hasMany('App\Bill');

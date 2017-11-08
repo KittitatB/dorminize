@@ -1,13 +1,13 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Member;
+use App\Room;
 class RoomController extends Controller
 {
     public function index()
     {
-        $members = Member::latest()->paginate(10);
-        return view('members.index',compact('members'))
+        $rooms = Room::latest()->paginate(10);
+        return view('rooms.index',compact('rooms'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     /**
@@ -17,7 +17,7 @@ class RoomController extends Controller
      */
     public function create()
     {
-        return view('members.create');
+        return view('rooms.create');
     }
     /**
      * Store a newly created resource in storage.
@@ -28,12 +28,14 @@ class RoomController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            'name' => 'required',
-            'email' => 'required',
+            'number' => 'required',
+            'status' => 'required',
+            'checkin_date' => 'required',
+            
         ]);
-        Member::create($request->all());
-        return redirect()->route('members.index')
-                        ->with('success','Member created successfully');
+        Room::create($request->all());
+        return redirect()->route('rooms.index')
+                        ->with('success','Room created successfully');
     }
     /**
      * Display the specified resource.
@@ -41,9 +43,9 @@ class RoomController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Member $member)
+    public function show(Room $room)
     {
-        return view('members.show',compact('member'));
+        return view('rooms.show',compact('room'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -51,9 +53,9 @@ class RoomController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Member $member)
+    public function edit(Room $room)
     {
-        return view('members.edit',compact('member'));
+        return view('rooms.edit',compact('room'));
     }
     /**
      * Update the specified resource in storage.
@@ -62,15 +64,16 @@ class RoomController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Member $member)
+    public function update(Request $request,Room $room)
     {
         request()->validate([
-            'name' => 'required',
-            'email' => 'required',
+            'number' => 'required',
+            'status' => 'required',
+            'checkin_date' => 'required',
         ]);
-        $member->update($request->all());
-        return redirect()->route('members.index')
-                        ->with('success','Member updated successfully');
+        $room->update($request->all());
+        return redirect()->route('rooms.index')
+                        ->with('success','Room updated successfully');
     }
     /**
      * Remove the specified resource from storage.
@@ -78,10 +81,10 @@ class RoomController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($ssn)
     {
-        Member::destroy($id);
-        return redirect()->route('members.index')
-                        ->with('success','Member deleted successfully');
+        Room::destroy($ssn);
+        return redirect()->route('rooms.index')
+                        ->with('success','Room deleted successfully');
     }
 }

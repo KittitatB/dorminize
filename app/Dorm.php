@@ -9,6 +9,8 @@ class Dorm extends Model
 
     public $incrementing = false;
 
+    protected $fillable = ['name','location','building_amt','room_amt','elec_unit_cost','water_unit_cost','description','rule','pic_dest'];
+
     public function ownedby()
     {
         return $this->belongsTo('App\Owner');

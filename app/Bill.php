@@ -10,6 +10,8 @@ class Bill extends Model
         'elec_unit', 'water_unit'
     ];
 
+    protected $primaryKey = 'invoice_number';
+
     public function paidby()
     {
         return $this->belongsTo('App\Client');

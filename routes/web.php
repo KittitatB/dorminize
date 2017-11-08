@@ -12,10 +12,24 @@
 */
 
 Route::get('/', function () {
-    return view('room/create');
+    return view('app');
 });
 
 Route::resource('clients','ClientController');
+
+Route::resource('bills','BillController');
+
+Route::resource('dorms','DormController');
+
+Route::resource('staffs','StaffController');
+
+Route::resource('rooms','RoomController');
+
+Route::resource('dormExpenses','DormExpenseController');
+
+Route::resource('roomTypes','RoomTypeController');
+
+
 
 
 
