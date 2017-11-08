@@ -46,7 +46,7 @@
             </a>
           </li>
           <li class="nav-item" data-toggle="tooltip" data-placement="right" title="รายรับรายจ่าย">
-            <a class="nav-link" href="{{ route('dormExpenses.index',$dorm->id) }}">
+            <a class="nav-link" href="">
               <i class="fa fa-fw fa-area-chart"></i>
               <span class="nav-link-text">
                 รายรับรายจ่าย</span>
