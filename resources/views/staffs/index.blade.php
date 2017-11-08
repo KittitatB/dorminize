@@ -38,7 +38,7 @@
         <td>{{ $staff->salary}}</td>
         <td>
             <a class="btn btn-info" href="{{ route('staffs.show',$staff->ssn) }}">Show</a>
-            <a class="btn btn-primary" href="{{ route('staffs.edit',$staff->ssn }}">Edit</a>
+            <a class="btn btn-primary" href="{{ route('staffs.edit',$staff->ssn) }}">Edit</a>
             {!! Form::open(['method' => 'DELETE','route' => ['staffs.destroy', $staff->ssn],'style'=>'display:inline']) !!}
             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
             {!! Form::close() !!}
