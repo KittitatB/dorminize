@@ -14,7 +14,7 @@ class Bill extends Model
 
     public function paidby()
     {
-        return $this->belongsTo('App\Client','invoice_number','invoice_number');
+        return $this->belongsTo('App\Client');
     }
 
     public function collectedby()

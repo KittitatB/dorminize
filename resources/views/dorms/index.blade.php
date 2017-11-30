@@ -22,25 +22,16 @@
             <th>Location</th>
             <th>Building Amount</th>
             <th>Room Amount</th>
-            <th>elec_unit_cost</th>
-            <th>water_unit_cost</th>
-            <th>Description</th>
-            <th>Rule</th>
-            <th>Picture</th>
+        
             <th width="280px">Operation</th>
         </tr>
     @foreach ($dorms as $dorm)
     <tr>
         <td>{{ $dorm->id}}</td>
-        <td>{{ $dorm->namet}}</td>
+        <td>{{ $dorm->name}}</td>
         <td>{{ $dorm->location}}</td>
         <td>{{ $dorm->building_amt}}</td>
         <td>{{ $dorm->room_amt}}</td>
-        <td>{{ $dorm->elec_unit_cost}}</td>
-        <td>{{ $dorm->water_unit_cost}}</td>
-        <td>{{ $dorm->description}}</td>
-        <td>{{ $dorm->rule}}</td>
-        <td>{{ $dorm->pic_dest}}</td>
 
 
         <td>

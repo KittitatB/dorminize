@@ -10,6 +10,6 @@ class RoomType extends Model
 
     public function has()
     {
-        return $this->hasMany('App\Room');
+        return $this->hasMany('App\Room','type_id');
     }
 }

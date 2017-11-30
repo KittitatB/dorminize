@@ -14,11 +14,11 @@ class Client extends Model
 
     public function pay()
     {
-        return $this->hasMany('App\Bill','invoice_number');
+        return $this->hasMany('App\Bill');
     }
 
     public function rent()
     {
-        return $this->belongsToMany('App\Room');
+        return $this->belongsToMany('App\Room','clients_rooms');
     }
 }

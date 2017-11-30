@@ -13,6 +13,12 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
+            <strong>type_id:</strong>
+            {!! Form::text('type_id', null, array('placeholder' => 'number','class' => 'form-control')) !!}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
             <strong>checkin_date:</strong>
             {!! Form::text('checkin_date', null, array('placeholder' => 'date','class' => 'form-control')) !!}
         </div>

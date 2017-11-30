@@ -8,6 +8,6 @@ class Owner extends Model
 {
     public function own()
     {
-        return $this->hasMany('App\Dorm');
+        return $this->hasMany('App\Dorm','owner_ssn');
     }
 }

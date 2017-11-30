@@ -18,26 +18,26 @@ class Dorm extends Model
 
     public function collect()
     {
-        return $this->hasMany('App\Bill');
+        return $this->hasMany('App\Bill','dorm_id');
     }
 
     public function expense()
     {
-        return $this->hasMany('App\DormExpense');
+        return $this->hasMany('App\DormExpense','dorm_id');
     }
 
     public function furniture()
     {
-        return $this->hasMany('App\Furniture');
+        return $this->hasMany('App\Furniture','dorm_id');
     }
 
     public function room()
     {
-        return $this->hasMany('App\Room');
+        return $this->hasMany('App\Room','dorm_id');
     }
 
     public function staff()
     {
-        return $this->hasMany('App\Staff');
+        return $this->hasMany('App\Staff','dorm_id');
     }
 }

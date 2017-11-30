@@ -10,12 +10,12 @@ class Room extends Model
 
     public function pay()
     {
-        return $this->hasMany('App\Bill');
+        return $this->hasMany('App\Bill','room_id');
     }
 
     public function rentby()
     {
-        return $this->belongsToMany('App\Client');
+        return $this->belongsToMany('App\Client','clients_rooms');
     }
 
     public function type()
@@ -30,6 +30,6 @@ class Room extends Model
 
     public function furniture()
     {
-        return $this->hasMany('App\furniture');
+        return $this->hasMany('App\furniture','room_id');
     }
 }

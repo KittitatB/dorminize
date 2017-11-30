@@ -98,4 +98,5 @@ class DormController extends Controller
         return redirect()->route('dorms.index')
                         ->with('success','Dorm deleted successfully');
     }
+
 }

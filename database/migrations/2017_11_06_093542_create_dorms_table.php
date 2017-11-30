@@ -18,7 +18,7 @@ class CreateDormsTable extends Migration
             $table->string('name');
             $table->string('location');
             $table->integer('building_amt');
-            $table->string('room_amt');
+            $table->integer('room_amt');
             $table->integer('elec_unit_cost');
             $table->integer('water_unit_cost');
             $table->text('description');

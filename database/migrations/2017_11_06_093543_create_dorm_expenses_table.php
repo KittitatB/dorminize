@@ -15,7 +15,7 @@ class CreateDormExpensesTable extends Migration
     {
         Schema::create('dorm_expenses', function (Blueprint $table) {
             $table->increments('id');
-            $table->dateTime('datetime');
+            $table->date('date');
             $table->float('water_cost',8,2);
             $table->float('elec_cost',8,2);
             $table->integer('dorm_id')->unsigned();

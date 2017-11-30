@@ -39,5 +39,6 @@
     </tr>
     @endforeach
     </table>
+    <h2>{{}}</h2>
     {!! $clients->render() !!}
 @endsection

@@ -67,7 +67,7 @@ class DormExpenseController extends Controller
     public function update(Request $request,DormExpense $dormExpense)
     {
         request()->validate([
-            'datetime' => 'required',
+            'date' => 'required',
             'water_cost' => 'required',
             'elec_cost' => 'required',
         ]);
